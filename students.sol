@@ -47,11 +47,11 @@ contract Students {
     }
     
     
-    function getStudentRecord(address _studentAddress) constant public returns(uint,Results)  {
+    function getStudentRecord(address _studentAddress) constant public returns(uint,bytes32,Results)  {
         
         Student memory temp = allStudentsData[_studentAddress];
         
-        return (temp.rollNumber,temp.studentResult);
+        return (temp.rollNumber,temp.hash,temp.studentResult);
         
     }
     
